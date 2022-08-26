@@ -22,8 +22,6 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-
-
   let x = Math.round((a / b) * 10) / 10;
   displayValue = x;
   resultText.textContent = displayValue;
@@ -34,14 +32,10 @@ function operate(a, b, op) {
   if (op == '-') subtract(a, b);
   if (op == '*') multiply(a, b);
   if (op == '/') divide(a, b);
-  console.log('done')
-  firstNumber = undefined;
 }
 
-
 function numClick(btn) {
-  let cont = btn.textContent;
-  displayValue += cont;
+  displayValue += btn.textContent;
   resultText.textContent = displayValue;
 }
 
@@ -54,15 +48,11 @@ function operatorClick(operator) {
   displayValue = '';
 }
 
-let first;
-let oper;
-let last;
-
 function resultClick() {
 
-  first = firstNumber;
-  oper = latestOperator;
-  last = Number(displayValue);
+  let first = firstNumber;
+  let oper = latestOperator;
+  let last = Number(displayValue);
   operate(first, last, oper);
 }
 
