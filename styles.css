@@ -1,12 +1,15 @@
-
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 #calculator {
   display: flex;
   justify-content: center;
   background-color: gray;
   width: 500px;
+  height: 800px;
   margin: 50px auto;
-  border: 10px solid green;
+  border: 10px solid hsl(0, 0%, 30%);
 }
 
 #button-container {
@@ -14,28 +17,29 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  width: 400px;
+  width: 430px;
   height: 500px;
-  border: 2px solid black;
   align-content: flex-start;
+  gap:  6px 6px;
   
 }
 
 .calc-button {
   width: 100px;
   height: 100px;
-  font-size: 30px;
+  font-size: 40px;
   border: 1px solid black;
+  border-radius: 10px;
 }
 
 #result {
   width: 400px;
   height: 100px;
-  margin: 0;
-  padding: 0;
+  margin: 0 5px 20px 5px;
+  padding: 0px 10px;
   background-color: lightgray;
-  color: beige;
-  font-size: 50px;
+  color: black;
+  font-size: 70px;
   border: 2px solid black;
   display: flex;
   justify-content: flex-end;
@@ -44,10 +48,12 @@
 
 .clear-btn {
   background-color: red;
+  color: white;
 }
 
 .sum-btn {
-  background-color: blueviolet;
+  background-color: green;
+  color: white;
 }
 
 .op-button {

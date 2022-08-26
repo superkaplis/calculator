@@ -9,7 +9,6 @@ function add(a, b) {
   resultText.textContent = displayValue;
 }
 
-
 function subtract(a, b) {
   let x = Number(a) - Number(b);
   displayValue = x;
@@ -23,6 +22,8 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
+
+
   let x = Math.round((a / b) * 10) / 10;
   displayValue = x;
   resultText.textContent = displayValue;
@@ -33,7 +34,10 @@ function operate(a, b, op) {
   if (op == '-') subtract(a, b);
   if (op == '*') multiply(a, b);
   if (op == '/') divide(a, b);
+  console.log('done')
+  firstNumber = undefined;
 }
+
 
 function numClick(btn) {
   let cont = btn.textContent;
@@ -43,22 +47,22 @@ function numClick(btn) {
 
 function operatorClick(operator) {
   let cont = operator.textContent;
-  firstNumber = Number(displayValue);
   latestOperator = cont;
+  firstNumber = Number(displayValue);
   displayValue = cont;
   resultText.textContent = displayValue;
   displayValue = '';
 }
 
-function resultClick() {
-  console.log(firstNumber)
-  console.log(latestOperator)
-  console.log(displayValue)
-  console.log('result: ')
+let first;
+let oper;
+let last;
 
-  let first = firstNumber;
-  let oper = latestOperator;
-  let last = Number(displayValue);
+function resultClick() {
+
+  first = firstNumber;
+  oper = latestOperator;
+  last = Number(displayValue);
   operate(first, last, oper);
 }
 
@@ -69,6 +73,9 @@ function clearAll() {
   latestOperator = undefined;
 }
 
+
+
+// added hover effect
 let buttons = document.querySelectorAll('button');
 
 for (let elem of buttons) {
