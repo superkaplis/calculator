@@ -39,17 +39,27 @@ function numClick(btn) {
   resultText.textContent = displayValue;
 }
 
+let isTwice = false;
+
 function operatorClick(operator) {
-  let cont = operator.textContent;
+  let cont;
+  
+  if(isTwice){
+    resultClick();
+    
+    return;
+  }
+  cont = operator.textContent;
   latestOperator = cont;
   firstNumber = Number(displayValue);
   displayValue = cont;
   resultText.textContent = displayValue;
   displayValue = '';
+  isTwice = true;
 }
 
 function resultClick() {
-
+  isTwice = false;
   let first = firstNumber;
   let oper = latestOperator;
   let last = Number(displayValue);
