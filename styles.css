@@ -62,3 +62,13 @@ html {
 .op-button {
   background-color: bisque;
 }
+
+#operatorr {
+  margin: -20px -10px 69px 20px;  
+  border-top-right-radius: 8px;
+  background-color: hsl(0, 0%, 90%);
+  font-size: 30px;
+  margin-top: 0px;
+  width: 20px;
+  text-align: center;
+}

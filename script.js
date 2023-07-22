@@ -17,22 +17,17 @@ function subtract(a, b) {
 
 function multiply(a, b) {
   let x = Number(a) * Number(b);
-  displayValue = Math.round(x * 10) / 10;
+  displayValue = Math.round(x * 100) / 100;
   resultText.textContent = displayValue;
 }
 
 function divide(a, b) {
-  let x = Math.round((a / b) * 10) / 10;
+  let x = Math.round((a / b) * 100) / 100;
   displayValue = x;
   resultText.textContent = displayValue;
 }
 
-function operate(a, b, op) {
-  if (op == '+') add(a, b);
-  if (op == '-') subtract(a, b);
-  if (op == '*') multiply(a, b);
-  if (op == '/') divide(a, b);
-}
+
 
 function numClick(btn) {
   displayValue += btn.textContent;
@@ -41,19 +36,21 @@ function numClick(btn) {
 
 let isTwice = false;
 
+let operatorText = document.querySelector('#operatorr');
 function operatorClick(operator) {
-  let cont;
-  
+operatorText.textContent = operator.textContent;
+
   if(isTwice){
     resultClick();
-    
+    latestOperator = operator.textContent;
+    firstNumber = Number(displayValue);
+    displayValue = '';
+    isTwice = true;
     return;
   }
-  cont = operator.textContent;
-  latestOperator = cont;
+
+  latestOperator = operator.textContent;
   firstNumber = Number(displayValue);
-  displayValue = cont;
-  resultText.textContent = displayValue;
   displayValue = '';
   isTwice = true;
 }
@@ -61,28 +58,19 @@ function operatorClick(operator) {
 function resultClick() {
   isTwice = false;
   let first = firstNumber;
-  let oper = latestOperator;
+  let op = latestOperator;
   let last = Number(displayValue);
-  operate(first, last, oper);
+
+  if (op == '+') add(first, last);
+  if (op == '-') subtract(first, last);
+  if (op == '*') multiply(first, last);
+  if (op == '/') divide(first, last);
 }
 
 function clearAll() {
-  resultText.textContent = '0';
+  resultText.textContent = '';
   displayValue = '';
   firstNumber = undefined;
   latestOperator = undefined;
 }
 
-
-
-// added hover effect
-let buttons = document.querySelectorAll('button');
-
-for (let elem of buttons) {
-  elem.addEventListener('mouseenter', () => {
-    elem.style.backgroundColor = 'aqua'
-  })
-  elem.addEventListener('mouseleave', () => {
-    elem.style.backgroundColor = ''
-  })
-};
