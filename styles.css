@@ -7,6 +7,10 @@ body {
   display: flex;
 }
 
+button:hover {
+  filter: brightness(1.38)
+}
+
 #history-container {
   width: 300px;
   margin: 40px 20px;
