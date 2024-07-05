@@ -11,8 +11,8 @@
   <div id='calculator'>
     <div id="button-container">
       <div id="result">
+        <p id="before-text"></p>
         <p id="result-text"></p>
-        <p id="operatorr">+</p>  
       </div>
       <button class="calc-button" onclick="numClick(this)">7</button>
       <button class="calc-button" onclick="numClick(this)">8</button>
@@ -31,13 +31,12 @@
       <button class="calc-button sum-btn" onclick="resultClick()">=</button>
       <button class="calc-button op-button" onclick="operatorClick(this)">/</button>
     </div>
-
-
-
-
-
-
   </div>
-
+  <div id="history-container">
+    <h2 style="color: white; text-align: center;">HISTORY</h2>
+    <div id="history">
+      <p id="firstPara"></p>
+    </div>
+  </div>
 </body>
 </html>

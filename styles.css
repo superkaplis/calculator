@@ -1,12 +1,36 @@
 html {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: burlywood;
+  background-color: #070720;
+}
+
+body {
+  display: flex;
+}
+
+#history-container {
+  width: 300px;
+  margin: 40px 20px;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #191937;
+  max-height: 85vh;
+  overflow-y: scroll;
+}
+
+#history {
+  color: white;
+}
+
+.histPara {
+  background-color: #313160;
+  padding: 10px 20px;
+  border-radius: 10px;
 }
 
 #calculator {
   display: flex;
   justify-content: center;
-  background-color: gray;
+  background-color: #313160;
   width: 500px;
   height: 800px;
   margin: 50px auto;
@@ -28,6 +52,7 @@ html {
 
 .calc-button {
   width: 100px;
+  background-color: #b3b3cf;
   height: 100px;
   font-size: 40px;
   border: 1px solid black;
@@ -37,38 +62,53 @@ html {
 #result {
   width: 400px;
   height: 100px;
-  margin: 0 5px 30px 5px;
-  padding: 0px 10px;
-  background-color: lightgray;
+  margin: 0 5px 60px 5px;
+  padding: 14px 40px 40px;
+  background-color: rgb(245, 244, 244);
   color: black;
   font-size: 70px;
   border: 2px solid black;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
   border-radius: 10px;
 }
 
+#result-text {
+  height: 45%;
+}
+
+#result > * {
+  margin: 0;
+}
+
+#before-text {
+  font-size: 25px;
+  color: rgb(87, 87, 87);
+  height: 45%;  
+}
+
 .clear-btn {
-  background-color: red;
+  background-color: rgb(158, 13, 13);
   color: white;
 }
 
 .sum-btn {
-  background-color: green;
+  background-color: rgb(0, 79, 0);
   color: white;
 }
 
 .op-button {
-  background-color: bisque;
+  background-color: rgb(49, 40, 67);
+  color: white;
 }
 
 #operatorr {
-  margin: -20px -10px 69px 20px;  
+  padding: 10px;
   border-top-right-radius: 8px;
-  background-color: hsl(0, 0%, 90%);
-  font-size: 30px;
-  margin-top: 0px;
+  border-bottom-left-radius: 8px;
+  font-size: 20px;
   width: 20px;
   text-align: center;
 }
